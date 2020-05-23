@@ -15,3 +15,5 @@ I've always been part of the open source community, having been a member of the 
 This blog is still in the early days of being put together, but fairly soon you'll start seeing regular content from me.
 
 If you want to get in touch, you can reach me here:
+[<img src=/images/twitter_social_icon_circle_color.png style="width:32px;height:32px;"/>](https://twitter.com/foksyerynn)
+[<img src=/images/github-mark-120px-plus.png style="width:32px;height:32px;"/>](https://github.com/boltovnya)
