@@ -15,5 +15,6 @@ I've always been part of the open source community, having been a member of the 
 
 This blog is still in the early days of being put together, but fairly soon you'll start seeing regular content from me.
 
-If you want to get in touch, you can reach me here: 
-<i class="fab fa-github></i>
+If you want to get in touch, you can reach me here:  
+
+<i class="fab fa-github"><a href="https://github.com/boltovnya">Boltovnya</a></i>
