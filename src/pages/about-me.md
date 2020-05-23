@@ -11,7 +11,7 @@ I started this blog to document my ongoing and future project plans as part of a
 
 I'm Erin and I'm an IT architect by trade, currently employed by [Red Hat](https://redhat.com). I tend to specialise in automation and information security, but as part of my current role, I also focus a lot on hybrid cloud technology.
 
-I've always been part of the open source community, having been a member of the [Free Software Foundation](https://fsf.org) for the past 5+ years, encouraging the adoption of OS technology throughout different roles and media, and by contributing to various projects on GitHub, but I think it's time I start building my own projects for other people to enjoy.
+I've always been part of the open source community, having been a member of the [Free Software Foundation](https://fsf.org) for the past couple of years, encouraging the adoption of OS technology throughout different roles and media, and by contributing to various projects on GitHub, but I think it's time I start building my own projects for other people to enjoy.
 
 This blog is still in the early days of being put together, but fairly soon you'll start seeing regular content from me.
 

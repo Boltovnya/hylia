@@ -4,6 +4,6 @@ permalink: '/contact/index.html'
 layout: 'layouts/contact.njk'
 ---
 
-You can have a contact page which uses a basic form. The [code with the form fields lives here](https://github.com/hankchizljaw/hylia/blob/master/src/_includes/layouts/contact.njk). 
-
-To delete the contact form for this site, delete this page in the CMS or at `src/pages/contact.md`. You probably will also want to delete `src/pages/thank-you.md`.
+<i class='fab fa-github'></i><a href="https://github.com/boltovnya" style="background: none;">Boltovnya</a></br>
+<i class="fab fa-twitter"></i><a href="https://twitter.com/foksyerynn" style="background: none;">Foksyerynn</a></br>
+<i class="fas fa-envelope"></i><a href="mailto://bolto@blyat.me" style="background:none;">Email</a>
