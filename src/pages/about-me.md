@@ -17,4 +17,4 @@ This blog is still in the early days of being put together, but fairly soon you'
 
 If you want to get in touch, you can reach me here:  
 
-<i class="fab fa-github"><a href="https://github.com/boltovnya">Boltovnya</a></i>
+<span class="fab fa-github"/> [Boltovnya](https://github.com/boltovnya)
