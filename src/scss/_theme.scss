@@ -21,7 +21,7 @@
   --color-theme-highlight-block: #{get-color('highlight')};
 }
 
-@include dark-mode() {
+/*@include dark-mode() {
   --color-bg: #{get-color('dark')};
   --color-bg-glare: #{get-color('slate')};
   --color-text: #{get-color('light')};
@@ -35,7 +35,7 @@
   --color-theme-highlight: #{get-color('highlight')};
   --color-theme-highlight-block: #{get-color('slate')};
   --color-theme-feature-text: #{get-color('highlight')};
-}
+}*/
 
 body {
   color: var(--color-text);
