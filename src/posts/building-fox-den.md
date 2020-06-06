@@ -39,38 +39,41 @@ Unfortunately, I've already performed most of the setup of the lab, so I won't b
 ### Roke
 
 ```
- | Info       | Purpose: Bare-metal Hypervisor                   |
- | ---------- | ------------------------------------------------ |
- | Model:     | HP DL360 G7                                      |
- | CPU:       | 2x Intel Xeon x5650 @ 2.6GHz                     |
- | Memory:    | 24GB ECC DDR3 @ 1333MHz (6x4GB)                  |
- | Storage:   | 2x DG146A4960 (146GB - 10K - SAS)                |
- | NIC:       | 2x HP NC382i Dual Port Gigabit (4 Ports Total)   |
+ |       Info | Purpose: Bare-metal Hypervisor                   |
+ | ---------: | ------------------------------------------------ |
+ |     Model: | HP DL360 G7                                      |
+ |        OS: | Red Hat Enterprise Linux 8.2                     |
+ |       CPU: | 2x Intel Xeon x5650 @ 2.6GHz                     |
+ |    Memory: | 24GB ECC DDR3 @ 1333MHz (6x4GB)                  |
+ |   Storage: | 2x DG146A4960 (146GB - 10K - SAS)                |
+ |       NIC: | 2x HP NC382i Dual Port Gigabit (4 Ports Total)   |
  | ---------- | ------------------------------------------------ |
 ```
 
-### Gont
+### Gont (Still to arrive)
 ```
- | Info       | Purpose: Bare-metal Hypervisor                   |
- | ---------- | ------------------------------------------------ |
- | Model:     | Sun Microsystems Sun Fire X4150                  |
- | CPU:       | 2x Intel Xeon E5410 @ 2.33GHz                    |
- | Memory:    | 8GB ECC DDR2                                     |
- | Storage:   | 1x 46GB - 10K - SAS                              |
- | NIC:       | tbc                                              |
+ |       Info | Purpose: Bare-metal Hypervisor                   |
+ | ---------: | ------------------------------------------------ |
+ |     Model: | Sun Microsystems Sun Fire X4150                  |
+ |        OS: | Probably RHEL                                    |
+ |       CPU: | 2x Intel Xeon E5410 @ 2.33GHz                    |
+ |    Memory: | 8GB ECC DDR2                                     |
+ |   Storage: | 1x 46GB - 10K - SAS                              |
+ |       NIC: | tbc                                              |
  | ---------- | ------------------------------------------------ |
 ```
 
 ### Ged
 
 ```
- | Info       | Purpose: Daily driver laptop                     |
- | ---------- | ------------------------------------------------ |
- | Model:     | Retina MacBook Pro (2015)                        |
- | CPU:       | Intel Core i7-4770HQ @ 2.2GHz                    |
- | Memory:    | 16GB DDR3 @ 1600MHz (2x8GB)                      |
- | Storage:   | 256GB Apple SATA SSD                             |
- | NIC:       | Apple Airport Card                               |
+ |       Info | Purpose: Daily driver laptop                     |
+ | ---------: | ------------------------------------------------ |
+ |     Model: | Retina MacBook Pro (2015)                        |
+ |        OS: | MacOS Catalina 10.15.5                           |
+ |       CPU: | Intel Core i7-4770HQ @ 2.2GHz                    |
+ |    Memory: | 16GB DDR3 @ 1600MHz (2x8GB)                      |
+ |   Storage: | 256GB Apple SATA SSD                             |
+ |       NIC: | Apple Airport Card                               |
  | ---------- | ------------------------------------------------ |
 ```
 
@@ -79,6 +82,7 @@ Unfortunately, I've already performed most of the setup of the lab, so I won't b
  |       Info | Purpose: DNS + DHCP Server                       |
  | ---------: | ------------------------------------------------ |
  |     Model: | Libvirt/KVM Host                                 |
+ |        OS: | Red Hat Enterprise Linux 8.2                     |
  |       CPU: | 2x vCPU                                          |
  |    Memory: | 4GiB                                             |
  |   Storage: | 20GiB                                            |
@@ -91,6 +95,7 @@ Unfortunately, I've already performed most of the setup of the lab, so I won't b
 |       Info | Purpose: Unifi Network Controller                |
 | ---------: | ------------------------------------------------ |
 |     Model: | Libvirt/KVM Host                                 |
+|        OS: | Ubuntu Server 20.04                              |
 |       CPU: | 1x vCPU                                          |
 |    Memory: | 4GiB                                             |
 |   Storage: | 25GiB                                            |
