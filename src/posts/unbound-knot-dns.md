@@ -1,6 +1,6 @@
 ---
 title: Unbinding the knots of DNS
-date: 2020-06-07
+date: 2020-06-08T13:39:00.000Z
 tags:
   - homelab
   - DNS
