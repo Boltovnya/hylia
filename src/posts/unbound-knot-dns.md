@@ -9,15 +9,16 @@ tags:
   - Unbound
   - ISC DHCP
 ---
-
 ## F@#K DNS!!1!
+
 Before I kick this post off properly, I just want to take a moment to send forward my appreciation and thanks to those out in the field, those who look after this monstrosity of a service on a day-to-day basis - keeping it tame and well-kept so that we, the unworthy, can resolve our hostnames safely and happily.
 
 > Seriously, I wouldn't wish this fate on my worst enemy
 
----
+- - -
 
 ## The plan
+
 I recently purchased a Unifi Security Gateway to complete the home network (having already had a Unifi AP), and after the rigmarole of setting that up, I wanted an even greater level of control of what's happening within the network boundary. Partly fueled by a constant urge to do better, partly fueled by the constant frustration of my old router's tendancy to inject horrific, non-specific hostnames into DNS queries which had an absurdly long TTL, I just had to fix this...
 
 ```
@@ -42,24 +43,28 @@ The plan was pretty simple, install an authoritative DNS server capable of accep
 
 > It was not, in fact, easy peasy
 
----
+- - -
 
 ## DNS, Part 1
+
 #### Technologies: [Knot DNS](https://www.knot-dns.cz/), [Knot-Resolver](https://www.knot-resolver.cz/)
 
 Now, I realise that I'm rusty when it comes to network-based infrastructure. It's been over 5 years since my ICND1+2 courses and I've never really been in a position where I've had to deploy or configure DNS since, but nothing could have prepared me for how difficult, frustrating and completely non-sensical this setup was. 
 
 The idea of using Knot and Knot-Resolver first came from a friend through [TARDIS](https://wiki.tardis.ed.ac.uk), who had been recommending it as an easy to deploy and straight forward DNS solution. This ticked the boxes necessary for me to take the plunge in deploying my own DNS.
 
----
+- - -
 
 <figure><img src="/images/unbound-knot-dns-discord.png" alt="img" loading="lazy" width="2000" height="178"><figcaption>Sometimes it is just as easy as that.</figcaption></figure>
 
----
+- - -
+
 ### Let's get automatin'
+
 With that, I got to work on planning my deployment. My friend had sent me a copy of their config that I could essentially just copy and paste into my own. As knotd config is YAML based and kresd config only requires one or two lines, I decided that I would try installing and deploying a service from scratch using Ansible.
 
 And all credit to Knot, the config is super simple and easy to template:
+
 ```yaml
 ---
 /etc/knot/knot.conf.j2
@@ -97,6 +102,7 @@ zone:
 ```
 
 As is the knot-resolver config:
+
 ```lua
 --- /etc/knot-resolver/kresd.conf.j2
 {% raw %}
@@ -140,10 +146,12 @@ With the config out the way, we need to actually write a playbook to write it, r
 
 So, we run the playbook and we're done? That's it? That's all there is to it?
 
->No.
+> No.
 
----
+- - -
+
 ### This is where the fun begins
+
 Something the Knot documentation neglects to tell you is that you need to set up your zone file manually. If you don't, you'll have `knot` screaming at you through systemd that your zone doesn't exist and blah blah blah. tl;dr - you need to build a zone.
 
 And this is really easy with Knot! Knot provides `knotc` to control config and zone changes. No need to wrangle any horrible BIND-based zone syntax, it's all done for you through this utility. I don't understand why it isn't well documented, because I'd want to scream about how useful `knotc` is from the rooftops!
@@ -162,6 +170,7 @@ knotc>
 ```
 
 Cool - we're ready to start building our zone! This couldn't be simpler and can be done in as little as 5 lines.
+
 ```bash
 knotc> zone-begin fox.den
 OK
@@ -192,19 +201,21 @@ Address:        10.0.2.3#53
 ** server can't find roke: NXDOMAIN
 ```
 
->Nope. 
+> Nope. 
 
 So we can resolve to the Internet, but not local addresses. What am I forgetting... I don't know. It's just not working. Is there any point to running an authoritative server if I can't resolve local hostnames? Not really...
 
----
+- - -
 
 ## DNS, Part 2
+
 #### Technologies: [Unbound](https://nlnetlabs.nl/projects/unbound/about/), [ISC DHCP](https://www.isc.org/dhcp/) - [Ansible files](#)
 
 ### Down the rabbit hole
+
 On the recommendation of another friend, I decided that I'd given up with Knot/Kresd and focused my attention on just getting a resolver working. Enter: Unbound. 
 
->Unbound is a validating, recursive, caching DNS resolver. 
+> Unbound is a validating, recursive, caching DNS resolver. 
 
 Unbound is a recursive DNS server which can host its own zones. A little backwards, but it was enough for what I needed. The setup is also super simple and hands-off (especially with a neat little [Ansible Role](https://galaxy.ansible.com/mrlesmithjr/unbound) on Galaxy to handle it all for me!)
 
@@ -291,16 +302,17 @@ Of course, the age-old adage of RTFM still rings true to this day. Unbound is on
 
 Well... I've gone through enough pain with DNS already, I thought. And I depend on a stable internet connection for work. I should probably leave things as they are, I don't need name resolution *that* badly. I can resolve external names and core internal services, I should be happy with that.
 
----
+- - -
 
 > ### But she wasn't happy with just that
 
 ## DNS, Part 3
+
 #### Technologies: Knot, Knot-Resolver, ISC-DHCP - [Ansible Role](https://gitlab.com/Boltovnya/foxden.knot)
 
 At this point, I was at my wit's end. I just wanted to be able to resolve local hostnames ad-hoc and not have to worry about it. Is that too much to ask!? Apparently so, but nonetheless I persevered.
 
-It was then that I conceded that I don't know enough about this sorta stuff to confidently do it by myself, so reached out to the friend who originally pointed me in the direction of Knot for a quick less on DNS. They were able to explain it in such terms that I was immediately able to understand it and I am forever grateful to have such a diverse and knowledgable social network that enables that.
+It was then that I conceded that I don't know enough about this sorta stuff to confidently do it by myself, so reached out to the friend who originally pointed me in the direction of Knot for a quick lesson on DNS. They were able to explain it in such terms that I was immediately able to understand it and I am forever grateful to have such a diverse and knowledgable social network that enables that.
 
 > Authoritative servers have the answers for their zones. Recursive servers search far and wide for answers. You need DDNS to dynamically update your local records, so you need an authoritative server to store those records.
 
@@ -309,6 +321,7 @@ I decided to go back to Knot and Kresd after this, with an understanding of how 
 So as before, I installed Knot and Kresd and configured my zones. Resolving works. Hurrah! A few config items had to be changed to allow for dynamic address updates, but this wasn't significant - involving only a few extra lines in each config file.
 
 First in Knot.conf to allow for dynamic updates. This is done simply by creating a TSIG key and an ACL associated with the key and assigning it to each zone.
+
 ```yaml
 ---
 /etc/knot/knot.conf
