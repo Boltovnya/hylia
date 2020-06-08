@@ -1,6 +1,6 @@
 ---
 title: Unbinding the knots of DNS
-date: '2020-06-07'
+date: 2020-06-08T13:39:00.000Z
 tags:
   - homelab
   - DNS
@@ -53,7 +53,7 @@ The idea of using Knot and Knot-Resolver first came from a friend through [TARDI
 
 ---
 
-![img](/images/unbound-knot-dns-discord.png "Sometimes it is just as easy as that.")
+<figure><img src="/images/unbound-knot-dns-discord.png" alt="img" loading="lazy" width="2000" height="178"><figcaption>Sometimes it is just as easy as that.</figcaption></figure>
 
 ---
 ### Let's get automatin'
