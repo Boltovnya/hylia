@@ -23,9 +23,8 @@ Unfortunately, I've already performed most of the setup of the lab, so I won't b
 
 ## Services
 ##### Write-ups coming soon
-- ~~Knot DNS~~
-- ~~Knot-Resolver~~
-- Unbound DNS
+- ~~Knot DNS~~ / ~~Unbound DNS~~ / Knot DNS
+- ~~Knot-Resolver~~ / Knot Resolver
 - ISC DHCP Server
 - UniFi Controller
 - Libvirt
