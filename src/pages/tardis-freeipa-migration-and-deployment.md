@@ -13,7 +13,8 @@ Tardis authentication currently relies on an outdated version of OpenLDAP, with 
 
 ## Plan of action
 ### tl;dr
-```
+```yaml
+{% raw %}
 1 - Deploy FreeIPA w/o Integrated DNS
 2 - Update tardis.ed.ac.uk zone with IPA SRVs
     - # ipa dns-update-system-records --dry-run > ipa_bind.db
@@ -34,6 +35,7 @@ Tardis authentication currently relies on an outdated version of OpenLDAP, with 
 7 - ...
 8 - Proffit
 (Note: DNS management will be done in the same way as before)
+{% endraw %}
 ```
 
 ### Full plan
