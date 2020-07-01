@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Tardis - FreeIPA Migration and Deployment
+permalink: /tardis/1
 ---
 ## Introduction
 
