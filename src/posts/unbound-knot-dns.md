@@ -55,7 +55,7 @@ The idea of using Knot and Knot-Resolver first came from a friend through [TARDI
 
 - - -
 
-<figure><img src="/images/unbound-knot-dns-discord.png" alt="img" loading="lazy" width="2000" height="178"><figcaption>Sometimes it is just as easy as that.</figcaption></figure>
+![img](/images/unbound-knot-dns-discord.png) 
 
 - - -
 
