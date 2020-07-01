@@ -9,7 +9,7 @@ One of the actions identified after the Tardis meeting on June 28th was to revis
 
 ## Current state of affairs
 
-Tardis authentication currently relies on OpenLDAP 2.4.31 (Built Apr 23 2013), with most administration being performed through Apache Directory Studio and a series of Python scripts.
+Tardis authentication currently relies on an outdated version of OpenLDAP, with most administration being performed through Apache Directory Studio and a series of Python scripts.
 
 ## Plan of action
 ### tl;dr
