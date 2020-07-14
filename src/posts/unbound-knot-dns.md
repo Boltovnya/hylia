@@ -72,7 +72,7 @@ And all credit to Knot, the config is super simple and easy to template:
 server:
   identity:  {{ ansible_fqdn }} 
   user: knot:knot
-  listen: [ {{ ansible_default_ipv4["address"] }}@55 ]
+  listen: [ {{ ansible_default_ipv4["address"] }}@53 ]
 
 log:
   - target: syslog
