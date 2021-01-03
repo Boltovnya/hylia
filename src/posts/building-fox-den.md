@@ -49,17 +49,35 @@ Unfortunately, I've already performed most of the setup of the lab, so I won't b
  | ---------- | ------------------------------------------------ |
 ```
 
-### Gont (Still to arrive)
+### Archmage
 ```
  |       Info | Purpose: Bare-metal Hypervisor                   |
  | ---------: | ------------------------------------------------ |
- |     Model: | Sun Microsystems Sun Fire X4150                  |
- |        OS: | Probably RHEL                                    |
- |       CPU: | 2x Intel Xeon E5410 @ 2.33GHz                    |
- |    Memory: | 8GB ECC DDR2                                     |
- |   Storage: | 1x 46GB - 10K - SAS                              |
- |       NIC: | tbc                                              |
+ |     Model: | HP DL360 G7                                      |
+ |        OS: | Red Hat Enterprise Linux 8.2                     |
+ |       CPU: | 2x Intel Xeon x5650 @ 2.6GHz                     |
+ |    Memory: | 24GB ECC DDR3 @ 1333MHz (6x4GB)                  |
+ |   Storage: | 2x DG146A4960 (146GB - 10K - SAS)                |
+ |       NIC: | 2x HP NC382i Dual Port Gigabit (4 Ports Total)   |
  | ---------- | ------------------------------------------------ |
+```
+
+### Gont (Still to arrive)
+```
+ |         Info | Purpose: Desktop Workstation                     |
+ | -----------: | ------------------------------------------------ |
+ |       Model: | Custom-Built.     		                       |
+ |          OS: | Windows 10 20.04                                 |
+ |         CPU: | AMD Ryzen 9 3900                                 |
+ |      Memory: | 16GB Corsair Vengeance DDR4 3200 White RGB       |
+ |     Storage: | 1TB Sabrent Rocket M.2 PCI-E Gen 4               |
+ |            - | 256GB Sabrent Rocker M.2 PCI-E Gen 3             |
+ |            - | 128GB Kingston HyperX Sata 3 6GBPS SSD           |
+ |            - | 1TB Samsung Spinmaster 5600RPM Sata 3 HDD.       |
+ |  Motherboard | Asus ROG Strix X570-E Gaming                     |
+ |          GPU | Gigabyte RX570 Gaming 4GB.                       |
+ |          GPU | [On arrival] Asus GeForce RTX 3080 TUF Gaming    |
+ | ------------ | ------------------------------------------------ |
 ```
 
 ### Ged
