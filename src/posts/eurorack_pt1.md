@@ -1,6 +1,7 @@
 ---
 title: Adventures in Eurorack | Pt.1
 data: 2021-01-03
+date: 2021-01-21T15:50:19.603Z
 tags:
   - music
   - hobby
@@ -104,4 +105,9 @@ An interesting, but exciting side effect of open sourcing modules is that it int
 [VCVRack](https://vcvrack.com/Rack) is an amazing open source project which allows you to simulate your physical rack in software. You can try out patches, use MIDI more easily, and even use it to expand your physical Eurorack synth through CV-CC controlers. A lot of the open source eurorack manufacturers release their own modules as software modules, but others have been reverse engineered from the original hardware and firmware.
 
 >If you're interested in trying out Eurorack, but don't want to wager a lot of money on it, definitely try out VCVRack. It's free, there are masses of free modules out there, and the integrated catalog allows you to install new modules with the click of a button.
+
+A great resource to see VCVrack in action is by watching Omri Cohen on [YouTube](https://www.youtube.com/c/OmriCohen-Music/). He shows off both VCVRack exclusive and hybrid virtual-physical eurorack patches and produces a lot of generative music.
+
+## Wrapping up
+
 
