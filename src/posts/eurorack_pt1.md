@@ -110,4 +110,5 @@ A great resource to see VCVrack in action is by watching Omri Cohen on [YouTube]
 
 ## Wrapping up
 
+This was a quick intro to eurorack, and wasn't meant to show you everything needed to get into that. Part 2 [Coming Soon](#) will start to look at how to produce sounds that please you.
 
