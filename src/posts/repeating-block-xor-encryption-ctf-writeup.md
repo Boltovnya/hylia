@@ -60,12 +60,14 @@ An illustrated example would look like:
 00001111 ^ 01101101 =  01100010 -> Hamming Distance = 3
 ```
 
-Easy enough. So it's time to code that up. We'll be doing this in Python, and the full code is available on [Gitlab](https://gitlab.com/boltovnya/247ctf).
+Looks easy enough. So it's time to code that up. We'll be doing this in Python, and the full code is available on [Gitlab](https://gitlab.com/boltovnya/247ctf).
+
+The first difficult we encounter is Python's handling of binary data, and managing representations of it. It's doable, but requires long chains of parsing of different datatypes, so the code can sometimes look a little... heavy. This is only a problem as far as the Hamming distance and Xor code goes.
 
 ```python
 def xor(a, b):
-    x = [i ^ j for i, j in zip(a, b)]
-    return bytes(x)
+  x = [i ^ j for i, j in zip(a, b)]
+  return bytes(x)
 
 def hamming_distance(a, b):
   """
@@ -73,6 +75,45 @@ def hamming_distance(a, b):
   Python is to convert it to a hex string, parse that as a number,
   convert that to Binary and then count the number of "1s".
   """
-    return bin(int(xor(a, b).hex(), 16).count('1')
+  return bin(int(xor(a, b).hex(), 16).count('1')
 ```
 
+The next step is to read out file, and break it up into n-length blocks.  We can achieve this by taking slices of the file at n-stop increments, and creating a new list of these blocks.
+
+While we're at it, we can also write our scoring function, which just uses what we've written already to build a dict of possible block sizes and their associated normalised Hamming distance. 
+
+```python
+from statistics import mean
+
+fo = open("exclusive_key", 'rb')
+f = fo.read()
+
+def xor...
+def hamming_distance...
+
+def bin_split(b, size):
+  return [b[i: i + size] for i in range(0, len(b), size)]
+
+def scoring(f):
+  scores = {}
+  for i in range(1, 256):
+    split = bin_split(f, i)
+    h = [] # Empty list for storing the score for each round of comparison.
+    for j in range(1, 6):
+      h.append(hamming_distance(b[0], b[j]))
+    havg = mean(h) # Averaging the results
+    score = havg/i # Normalising the result
+    scores.update({i: score})
+    
+  top1 = min(scores.items(), key=lambda x: x[1]) # Gets the lowest value of the dict
+  del scores[top1[0]] # Deletes the lowest value so we can work out the second lowest
+  top2 = min(scores.items(), key=lambda x: x[1])
+  del scores[top2[0]]
+  top3 = min(scores.items(), key=lambda x: x[1])
+  del scores[top3[0]]
+  top4 = min(scores.items(), key=lambda x: x[1])
+  del scores[top4[0]]
+  top5 = min(scores.items(), key=lambda x: x[0])
+  
+  print(f"#1 - {top1}\n#2 - {top2}\n#3 - {top3}\n#4 - {top4}\n#5 - {top5}")
+```
