@@ -33,3 +33,9 @@ I recently came across [247CTF](https://247ctf.com), a moderately new site which
 In this challenge, we're given an encrypted file and we're asked to find the encryption password and decrypt the file.
 
 ![Text reads: "We put together a substitution-flag-permutation network. We encrypted the flag with the network, but forgot to write down the key. Can you reverse the network and recover the flag plaintext?"](/images/screenshot-2022-03-15-at-21.09.34.png "Challenge description")
+
+
+## Analysis
+
+First things first, 
+
