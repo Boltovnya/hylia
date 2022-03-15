@@ -98,15 +98,18 @@ def scoring(f):
   scores = {}
   for i in range(1, 256):
     split = bin_split(f, i)
-    h = [] # Empty list for storing the score for each round of comparison.
+    h = [] 
     for j in range(1, 6):
       h.append(hamming_distance(b[0], b[j]))
     havg = mean(h) # Averaging the results
     score = havg/i # Normalising the result
     scores.update({i: score})
     
-  top1 = min(scores.items(), key=lambda x: x[1]) # Gets the lowest value of the dict
-  del scores[top1[0]] # Deletes the lowest value so we can work out the second lowest
+  # Gets the lowest value of the dict and then
+  # deletes the lowest value so we can work out the second lowest, and so on.
+  # It's verbose, I know, but I couldn't find an easier way around this.
+  top1 = min(scores.items(), key=lambda x: x[1]) 
+  del scores[top1[0]] 
   top2 = min(scores.items(), key=lambda x: x[1])
   del scores[top2[0]]
   top3 = min(scores.items(), key=lambda x: x[1])
