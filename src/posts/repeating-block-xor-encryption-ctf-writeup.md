@@ -60,7 +60,7 @@ An illustrated example would look like:
 00001111 ^ 01101101 =  01100010 -> Hamming Distance = 3
 ```
 
-So it's time to code that up:
+Easy enough. So it's time to code that up. We'll be doing this in Python, and the full code is available on [Gitlab](https://gitlab.com/boltovnya/247ctf).
 
 ```python
 def xor(a, b):
@@ -75,3 +75,4 @@ def hamming_distance(a, b):
   """
     return bin(int(xor(a, b).hex(), 16).count('1')
 ```
+
