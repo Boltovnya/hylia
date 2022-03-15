@@ -54,16 +54,24 @@ In order to work out the block size of the XOR key, we need to:
 Calculating the Hamming distance of values is surprisingly easy given we're working with binary. Just XOR the two values, and then count the number of 1s in the result.
 
 An illustrated example would look like:
+
 ```
 (15)       (109)       (98) 
 00001111 ^ 01101101 =  01100010 -> Hamming Distance = 3
 ```
 
 So it's time to code that up:
+
 ```python
 def xor(a, b):
-    return bytes([i ^ j for i, j in zip(a, b)])
+    x = [i ^ j for i, j in zip(a, b)]
+    return bytes(x)
 
 def hamming_distance(a, b):
+  """
+  The easiest way to work out the number of 1s in a byte in 
+  Python is to convert it to a hex string, parse that as a number,
+  convert that to Binary and then count the number of "1s".
+  """
     return bin(int(xor(a, b).hex(), 16).count('1')
 ```
