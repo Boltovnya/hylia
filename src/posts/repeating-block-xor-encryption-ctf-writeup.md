@@ -152,7 +152,7 @@ Bingo. We've got HTML! Our encrypted file is a web page (probably). So our first
 2. We can finish off that first line with `<!DOCTYPE html>`.
 3. Immediately after a newline, there will be a `<html>` tag.
 
-![Sad cat meme with the text "Inference = Data + Assumptions"](https://miro.medium.com/max/1400/1*MzptkQomV-qotlh5WAn5NQ.png "I think we can move on from \\\\\"Assumptions\\\\\" now, since we kinda have the data")
+![Sad cat meme with the text "Inference = Data + Assumptions"](https://miro.medium.com/max/1400/1*MzptkQomV-qotlh5WAn5NQ.png "I think we can move on from "Assumptions" now, since we kinda have the data")
 
 We're not quite in the clear yet though. We've only found the first 15 bytes of a 40 byte flag, and assumption #3 while helpful, will hinder us. You see, `<html>` isn't just a one-and-done. There are different attributes that, while standard, are sometimes used and sometimes not, and the order isn't necessarily the same from site to site. Let's list out some different options for our flag decryption key.
 
