@@ -86,3 +86,9 @@ A Turing Test is a method of testing whether or not an Artificial Intelligence (
 CAPTCHA's purpose is to tell Humans and Computers apart. There are a number of great reasons why you should do this, but mainly it's there to prevent Botting - the running of tasks in a repeated manner by a computer, sometimes maliciously.
 
 You, the ~~test subject~~ reader, have undoubtedly come across CAPTCHAs in one way or another. If you're signing up to a new website, using Google over a company VPN, or have simply visited a web page one too many times.
+
+CAPTCHAs are specifically designed to be unreadable by OCR (Optical Character Recognition) tools, meaning that Computers should not be able to read them. They make use of warped characters on low-contrast backgrounds, sometimes with arbitrary shapes around to make this task even more difficult. Upon completion of a CAPTCHA, the web application knows with some degree of confidence that the user attempting to access it is in fact a human.
+
+Except that's not so true nowadays.
+
+# Part 2 - Neural Networks
