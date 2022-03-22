@@ -41,3 +41,17 @@ Given that there's nothing of interest in the head, let's focus our attention on
 
 We can now rule out any form of JavaScript nonsense and focus our attention on what data is actually sent to and received from the server. Setting up a HTTP Proxy which intercepts requests is the best way to do that, and we'll use Burp Suite for that.
 
+### Burp Suite
+
+1. Loading the page - `GET /`
+
+   ![](/images/carbon-2-.png)
+2. Response
+
+   ![](/images/carbon-3-.png)
+3. Sending data - `POST /`
+
+   ![](/images/carbon-4-.png)
+4. Response
+
+   ![](/images/carbon-5-.png)
