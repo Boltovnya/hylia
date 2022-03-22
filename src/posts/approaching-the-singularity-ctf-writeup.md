@@ -33,6 +33,11 @@ This one was incredibly tough, and required me to experiment with new ways to so
 
 On starting the challenge instance, we're met with a simple web page with a CAPTCHA and a form consisting of an input box and a submit button. Given that the page is so plain, let's check out the source and see if there's anything that could give us insight into how the CAPTCHA is generated, and if we can modify anything.
 
-
+At a quick glance, there's nothing actually being loaded remotely in terms of scripts, i.e. no JavaScript. The only thing that's loaded is the CSS, which isn't interesting at all.
 
 ![HTML source code of page](/images/carbon-1-.png)
+
+Given that there's nothing of interest in the head, let's focus our attention on the body. The body of the page is, again, very simple - only loading an image from `mturk.php` and a form which on submission, sends a `POST` request to the page with the data entered into the text field. 
+
+We can now rule out any form of JavaScript nonsense and focus our attention on what data is actually sent to and received from the server. Setting up a HTTP Proxy which intercepts requests is the best way to do that, and we'll use Burp Suite for that.
+
