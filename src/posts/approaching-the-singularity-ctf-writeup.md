@@ -55,3 +55,14 @@ We can now rule out any form of JavaScript nonsense and focus our attention on w
 4. Response
 
    ![](/images/carbon-5-.png)
+
+From the two endpoints we've been able to hit, we've been able to see two pieces of evidence that may help us in solving this. 
+
+1. The server is running on NGINX (not super helpful)
+2. The site stores a PHP Session cookie (probably useful)
+
+Knowing this, we're more likely to be able to programmatically solve the captchas. 
+
+If we move our attention to `mturk.php`, the file which is rendered as an image, we'll see that it is actually just a PNG file which is generated on each call to the page.
+
+![](/images/carbon-6-.png)
