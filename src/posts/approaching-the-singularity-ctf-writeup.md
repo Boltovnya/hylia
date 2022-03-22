@@ -66,3 +66,23 @@ Knowing this, we're more likely to be able to programmatically solve the captcha
 If we move our attention to `mturk.php`, the file which is rendered as an image, we'll see that it is actually just a PNG file which is generated on each call to the page.
 
 ![](/images/carbon-6-.png)
+
+A couple calls to `mturk.php` proves this and yields these results.
+
+![](/images/combined.png)
+
+With no obvious headers or request body items to influence what CAPTCHA is actually generated on each call, we can easily assume that we can't make the CAPTCHA generate what we want and that it's done randomly each time the endpoint is hit. 
+
+This is going to be tricky.
+
+## CAPTCHA Background
+
+If you cast your mind back to the start of this blog, you'll see that CAPTCHA is actually an acronym (or maybe a backronym) for "**C**ompletely **A**utomated **P**ublic **T**uring test to tell **C**omputers and **H**umans **A**part". To truly understand what that means, let's quickly describe what a Turing Test is. 
+
+![](/images/tfg2etqk9yjnqurrwyhcdg.jpg "\"Good job! As part of a required test protocol, we will stop enhancing the truth in three... Two... One.\"")
+
+A Turing Test is a method of testing whether or not an Artificial Intelligence (AI) is capable of thinking like a Human. During the test, a Human test subject and an AI interact with a Human observer who is asking questions. The AI and the human are both asked the same questions, within the same specific subject and the same format. The observer, after having asked the questions must then determine which answers were the Human's, and which were the AI's. This process is repeated a number of times, and the AI is deemed to have passed the Turing Test if the observer is incorrect 50% of the time or more. To date, no computer or AI has been able to pass the Turing test.
+
+CAPTCHA's purpose is to tell Humans and Computers apart. There are a number of great reasons why you should do this, but mainly it's there to prevent Botting - the running of tasks in a repeated manner by a computer, sometimes maliciously.
+
+You, the ~~test subject~~ reader, have undoubtedly come across CAPTCHAs in one way or another. If you're signing up to a new website, using Google over a company VPN, or have simply visited a web page one too many times.
