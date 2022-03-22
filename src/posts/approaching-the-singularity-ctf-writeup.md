@@ -31,4 +31,8 @@ This one was incredibly tough, and required me to experiment with new ways to so
 
 ![Web page titled "Mechanical Turk" with a CAPTCHA, text input field and submit button](/images/screen-shot-2022-03-22-at-16.28.57.png)
 
-On starting the challenge instance, we're met with a simple web page with a CAPTCHA and a form consisting of an input box and a submit button.
+On starting the challenge instance, we're met with a simple web page with a CAPTCHA and a form consisting of an input box and a submit button. Given that the page is so plain, let's check out the source and see if there's anything that could give us insight into how the CAPTCHA is generated, and if we can modify anything.
+
+
+
+![HTML source code of page](/images/carbon-1-.png)
