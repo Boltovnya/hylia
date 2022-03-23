@@ -98,4 +98,5 @@ Yes, it's a bit of a buzzword nowadays, but Artificial Intelligence, Machine Lea
 
 Rant over. While AI as a subject is waved around as a sales pitch, it can actually be quite useful. Pattern recognition in images is such an incredibly broad field with millions of potential applications. Diagnosing illness with medical scans, image description for the sight impaired, collision detection in self-driving cars and even hand tracking for VR/AR (yay, more buzzwords) applications are just a small number of applications that are in place in the real world that are powered by Neural Networks. 
 
-Previously, these would have required absolutely massive data sets to train from, and an inordinate amount of time to perform the training and subsequent inference or predictions, but with advances in parallel processing, both of these variables have been vastly reduced. 
+Previously, these would have required absolutely massive data sets to train from, and an inordinate amount of time to perform the training and subsequent inference or predictions, but with advances in parallel processing, both of these variables have been vastly reduced. Modern frameworks like Tensorflow and Keras can transparently make use of GPU cores to accelerate the parellel processing workloads required to build Neural Network models. But you didn't come here for a lesson or a sales pitch.
+
