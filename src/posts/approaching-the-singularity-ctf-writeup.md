@@ -182,35 +182,10 @@ So we've worked out how to display and pass data from the HTML perspective, let'
 
 A few more imports gets us all the tools we need to build this app
 
-<iframe
+<center><iframe
   src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=python&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=from%2520flask%2520import%2520Flask%252C%2520render_template%252C%2520request%252C%2520redirect%252C%2520url_for%250Afrom%2520base64%2520import%2520b64encode%252C%2520b64decode%250Aimport%2520requests%250Aimport%2520os"
-  style="width: 1024px; height: 473px; border:0; transform: scale(1); "
+  style="width: 700px; height: 473px; border:0; transform: scale(1); "
   sandbox="allow-scripts allow-same-origin">
-</iframe>
+</iframe></center>
 
-
-
-```python
-# Additional imports for needed functionality
-from flask import Flask, render_template, request, redirect, url_for
-import requests
-from base64 import b64encode, b64decode
-import os
-...
-@app.route("/")
-def home()
-  r = requests.get("https://coolctf.example/mturk.php")
-  img = r.content
-  b64 = b64encode(img).decode("utf-8")
-  files = len(os.listdir('./images'))
-  return render_template('index.j2', image=image, i=num_files)
-
-@app.route("/post", methods=['POST'])
-def post():
-  filename = request.form["filename"]
-  image = request.form["image"]
-  
-  with open(f"./images/{filename}.png", "wb") as wb:
-    wb.write(b64decode(image))
-  return redirect(url_for('home'))
-```
+Which allows us 
