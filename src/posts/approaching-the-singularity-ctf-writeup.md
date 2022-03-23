@@ -100,3 +100,10 @@ Rant over. While AI as a subject is waved around as a sales pitch, it can actual
 
 Previously, these would have required absolutely massive data sets to train from, and an inordinate amount of time to perform the training and subsequent inference or predictions, but with advances in parallel processing, both of these variables have been vastly reduced. Modern frameworks like Tensorflow and Keras can transparently make use of GPU cores to accelerate the parellel processing workloads required to build Neural Network models. But you didn't come here for a lesson or a sales pitch.
 
+---
+
+The only way I could realistically see myself solving this challenge was either paying a bunch of students in pizza to access a proxied version of the challenge site (i.e. sharing the PHP Session Token), and hoping they'd be fast enough to beat the 30 second limit, or building a prediction model which could accurately "read" the CAPTCHA text and solve the equation given.
+
+I went for the latter option, as I'm broke and I don't think I could trust students without being in the room with them.
+
+
