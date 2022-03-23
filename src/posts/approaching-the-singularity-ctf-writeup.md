@@ -180,12 +180,15 @@ Except now the issue is how do we pass the image data from the `GET` route, to t
 
 So we've worked out how to display and pass data from the HTML perspective, let's actually get these routes doing something.
 
-<center><iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=%2523%2520Additional%2520imports%2520for%2520needed%2520functionality%250Afrom%2520flask%2520import%2520Flask%252C%2520render_template%252C%2520request%252C%2520redirect%252C%2520url_for%250Aimport%2520requests%250Afrom%2520base64%2520import%2520b64encode%252C%2520b64decode%250Aimport%2520os%250A...%250A%2540app.route%28%2522%252F%2522%29%250Adef%2520home%28%29%250A%2520%2520r%2520%253D%2520requests.get%28%2522https%253A%252F%252Fcoolctf.example%252Fmturk.php%2522%29%250A%2520%2520img%2520%253D%2520r.content%250A%2520%2520b64%2520%253D%2520b64encode%28img%29.decode%28%2522utf-8%2522%29%250A%2520%2520files%2520%253D%2520len%28os.listdir%28%27.%252Fimages%27%29%29%250A%2520%2520return%2520render_template%28%27index.j2%27%252C%2520image%253Dimage%252C%2520i%253Dnum_files%29%250A%250A%2540app.route%28%2522%252Fpost%2522%252C%2520methods%253D%255B%27POST%27%255D%29%250Adef%2520post%28%29%253A%250A%2520%2520filename%2520%253D%2520request.form%255B%2522filename%2522%255D%250A%2520%2520image%2520%253D%2520request.form%255B%2522image%2522%255D%250A%2520%2520%250A%2520%2520with%2520open%28f%2522.%252Fimages%252F%257Bfilename%257D.png%2522%252C%2520%2522wb%2522%29%2520as%2520wb%253A%250A%2520%2520%2520%2520wb.write%28b64decode%28image%29%29%250A%2520%2520return%2520redirect%28url_for%28%27home%27%29%29"
-  style="width: 700px; height: 691px; border:0; transform: scale(1); overflow:hidden;"
+A few more imports gets us all the tools we need to build this app
+
+<iframe
+  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=python&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=from%2520flask%2520import%2520Flask%252C%2520render_template%252C%2520request%252C%2520redirect%252C%2520url_for%250Afrom%2520base64%2520import%2520b64encode%252C%2520b64decode%250Aimport%2520requests%250Aimport%2520os"
+  style="width: 1024px; height: 473px; border:0; transform: scale(1); "
   sandbox="allow-scripts allow-same-origin">
 </iframe>
-</center>
+
+
 
 ```python
 # Additional imports for needed functionality
