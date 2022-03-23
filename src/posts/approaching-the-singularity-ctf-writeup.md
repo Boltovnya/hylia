@@ -61,7 +61,7 @@ From the two endpoints we've been able to hit, we've been able to see two pieces
 1. The server is running on NGINX (not super helpful)
 2. The site stores a PHP Session cookie (probably useful)
 
-Knowing this, we're more likely to be able to programmatically solve the captchas. 
+Knowing this, we're more likely to be able to programmatically solve the CAPTCHAs, as we'll need the session ID to tie our `POST` requests to the CAPTCHA image we've received.
 
 If we move our attention to `mturk.php`, the file which is rendered as an image, we'll see that it is actually just a PNG file which is generated on each call to the page.
 
@@ -92,3 +92,10 @@ CAPTCHAs are specifically designed to be unreadable by OCR (Optical Character Re
 Except that's not so true nowadays.
 
 # Part 2 - Neural Networks
+Yes, it's a bit of a buzzword nowadays, but Artificial Intelligence, Machine Learning and Neural Networks are terms that are at the forefront of modern computing, and they'll be around for a while. The only issue is, [Corpo rats](https://www.urbandictionary.com/define.php?term=Corpo) have gotten their hands on it and are applying it to everything, without really understanding what it is or how it works. [AI-powered Washing Machines](https://news.samsung.com/global/samsung-introduces-ai-powered-laundry-lineup-with-top-tier-energy-efficiency-new-refrigerators-customizable-for-every-lifestyle), [ML for trading](https://github.com/stefan-jansen/machine-learning-for-trading), it's all a bit reminiscent of when IoT first became a thing. Who needs an internet connected fridge that can think?
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/bZe5J8SVCYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+Rant over. While AI as a subject is waved around as a sales pitch, it can actually be quite useful. Pattern recognition in images is such an incredibly broad field with millions of potential applications. Diagnosing illness with medical scans, image description for the sight impaired, collision detection in self-driving cars and even hand tracking for VR/AR (yay, more buzzwords) applications are just a small number of applications that are in place in the real world that are powered by Neural Networks. 
+
+Previously, these would have required absolutely massive data sets to train from, and an inordinate amount of time to perform the training and subsequent inference or predictions, but with advances in parallel processing, both of these variables have been vastly reduced. 
