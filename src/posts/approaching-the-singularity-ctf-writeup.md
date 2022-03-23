@@ -79,7 +79,7 @@ This is going to be tricky.
 
 If you cast your mind back to the start of this blog, you'll see that CAPTCHA is actually an acronym (or maybe a backronym) for "**C**ompletely **A**utomated **P**ublic **T**uring test to tell **C**omputers and **H**umans **A**part". To truly understand what that means, let's quickly describe what a Turing Test is. 
 
-![](/images/tfg2etqk9yjnqurrwyhcdg.jpg "\\\\"Good job! As part of a required test protocol, we will stop enhancing the truth in three... Two... One.\\\\"")
+![](/images/tfg2etqk9yjnqurrwyhcdg.jpg "\\\\\"Good job! As part of a required test protocol, we will stop enhancing the truth in three... Two... One.\\\\\"")
 
 A Turing Test is a method of testing whether or not an Artificial Intelligence (AI) is capable of thinking like a Human. During the test, a Human test subject and an AI interact with a Human observer who is asking questions. The AI and the human are both asked the same questions, within the same specific subject and the same format. The observer, after having asked the questions must then determine which answers were the Human's, and which were the AI's. This process is repeated a number of times, and the AI is deemed to have passed the Turing Test if the observer is incorrect 50% of the time or more. To date, no computer or AI has been able to pass the Turing test.
 
@@ -133,26 +133,19 @@ So I broke out the Python and wrote a little app to make my life easier.
 
 The easiest way I thought of setting this up was by using a Flask app with two endpoints, one to display the page, and another to send the filename and image data to. Let's code that as we go.
 
-<iframe
+<center><iframe
   src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=800&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=from%2520flask%2520import%2520Flask%250A%250Aapp%2520%253D%2520Flask%28__name__%29%250A%250A%2540app.route%28%2522%252F%2522%29%253A%250Adef%2520home%28%29%253A%250A%2520%2520return%2520%2522Hello%2520World%2522%250A%250A%2540app.route%28%2522%252Fpost%2522%252C%2520methods%253D%255B%27POST%27%255D%29%250Adef%2520post%28%29%253A%250A%2520%2520return%2520%2522Post%2522%250A%250Aapp.run%28%29"
   style="width: 750px; height: 461px; border:0; transform: scale(1); overflow:hidden;"
   sandbox="allow-scripts allow-same-origin">
-</iframe>
-
-
-
+</iframe></center>
 
 We have the bare-bones now, but we also need a webpage to display and interact with. Using Flask, we can actually do this in Jinja quite easily
 
-
-<iframe
+<center><iframe
   src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=800&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=%253C%21DOCTYPE%2520html%253E%250A%253Chtml%2520lang%253D%2522en%2522%253E%250A%2520%2520%2520%2520%253Chead%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Cmeta%2520charset%253D%2522utf-8%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ctitle%253EAI%2520Indexer%253C%252Ftitle%253E%250A%2520%2520%2520%2520%253C%252Fhead%253E%250A%2520%2520%2520%2520%253Cbody%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ch1%253EAI%2520Indexer%253C%252Fh1%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Cimg%2520src%253D%2522%257B%257B%2520image%2520%257D%257D%2522%252F%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Cform%2520action%253D%2522%252Fpost%2522%2520method%253D%2522post%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Cinput%2520type%253D%2522text%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520name%253D%2522filename%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520autofocus%2520%252F%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Cinput%2520type%253D%2522submit%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520value%253D%2522Submit%2522%2520%252F%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Fform%253E%250A%2520%2520%2520%2520%2520%2520%253Cp%253E%257B%257B%2520i%2520%257D%257D%2520files%253C%252Fp%253E%250A%2520%2520%2520%2520%253C%252Fbody%253E%250A%253C%252Fhtml%253E"
   style="width: 700px; height: 587px; border:0; transform: scale(1); overflow:hidden;"
   sandbox="allow-scripts allow-same-origin">
-</iframe>
-
-
-
+</iframe></center>
 
 So now we have a super simple page which is dedicated to filling in CAPTCHAs, as well as showing how many images you've spent your time filling in. It's like a really shit cookie clicker.
 
@@ -169,23 +162,30 @@ all while making sure we're working on the same image. Remember, each time `mtur
 If we break down each step, the task seems a lot more manageable than at first glance.
 
 Rendering the Jinja template seemed difficult, as you can't pass binary data to HTML and render it as an image. Then I remembered that you can, but only if you Base64 encode the image data into plaintext. In order to do this, we need to edit the j2 template we made previously so that the `img` tag knows how to read the data.
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=...%250A%253Cimg%2520src%253D%2522data%253A%253Bbase64%252C%257B%257B%2520image%2520%257D%257D%2522%252F%253E%250A..."
-  style="width: 680px; height: 242px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
 
+<center><iframe
+  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=...%250A%253Cimg%2520src%253D%2522data%253A%253Bbase64%252C%257B%257B%2520image%2520%257D%257D%2522%252F%253E%250A..."
+  style="width: 700px; height: 253px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe></center>
 
 Except now the issue is how do we pass the image data from the `GET` route, to the `POST` route that saves the file. The answer is, send it with the `POST` request. You can create a hidden input which sends the image data to the `POST` endpoint, which can then be decoded and turned back into an image. 
 
 <center><iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=680&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=...%250A%253Cinput%2520type%253D%2522hidden%2522%2520name%253D%2522image%2522%2520value%253D%2522%257B%257B%2520image%2520%257D%257D%2522%253E%250A..."
-  style="width: 900px; height: 300px; border:0; transform: scale(1); overflow:hidden;"
+  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=...%250A%253Cinput%2520type%253D%2522hidden%2522%2520%250A%2520%2520name%253D%2522image%2522%2520value%253D%2522%257B%257B%2520image%2520%257D%257D%2522%2520%252F%253E%250A..."
+  style="width: 700px; height: 274px; border:0; transform: scale(1); overflow:hidden;"
   sandbox="allow-scripts allow-same-origin">
 </iframe>
-
+</center>
 
 So we've worked out how to display and pass data from the HTML perspective, let's actually get these routes doing something.
+
+<center><iframe
+  src="https://carbon.now.sh/embed?bg=rgba%28182%2C162%2C145%2C1%29&t=zenburn&wt=bw&l=jsx&width=700&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14.5px&lh=144%25&si=false&es=2x&wm=false&code=%2523%2520Additional%2520imports%2520for%2520needed%2520functionality%250Afrom%2520flask%2520import%2520Flask%252C%2520render_template%252C%2520request%252C%2520redirect%252C%2520url_for%250Aimport%2520requests%250Afrom%2520base64%2520import%2520b64encode%252C%2520b64decode%250Aimport%2520os%250A...%250A%2540app.route%28%2522%252F%2522%29%250Adef%2520home%28%29%250A%2520%2520r%2520%253D%2520requests.get%28%2522https%253A%252F%252Fcoolctf.example%252Fmturk.php%2522%29%250A%2520%2520img%2520%253D%2520r.content%250A%2520%2520b64%2520%253D%2520b64encode%28img%29.decode%28%2522utf-8%2522%29%250A%2520%2520files%2520%253D%2520len%28os.listdir%28%27.%252Fimages%27%29%29%250A%2520%2520return%2520render_template%28%27index.j2%27%252C%2520image%253Dimage%252C%2520i%253Dnum_files%29%250A%250A%2540app.route%28%2522%252Fpost%2522%252C%2520methods%253D%255B%27POST%27%255D%29%250Adef%2520post%28%29%253A%250A%2520%2520filename%2520%253D%2520request.form%255B%2522filename%2522%255D%250A%2520%2520image%2520%253D%2520request.form%255B%2522image%2522%255D%250A%2520%2520%250A%2520%2520with%2520open%28f%2522.%252Fimages%252F%257Bfilename%257D.png%2522%252C%2520%2522wb%2522%29%2520as%2520wb%253A%250A%2520%2520%2520%2520wb.write%28b64decode%28image%29%29%250A%2520%2520return%2520redirect%28url_for%28%27home%27%29%29"
+  style="width: 700px; height: 691px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
+</center>
 
 ```python
 # Additional imports for needed functionality
