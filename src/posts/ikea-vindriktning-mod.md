@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: Ikea VINDRIKTNING Mod
 date: 2023-01-16T20:47:21.236Z
 ---
+# W﻿riteup Later
 
 ![](/images/photo_7_2023-01-16_20-44-04.jpg)
 
@@ -21,8 +22,6 @@ date: 2023-01-16T20:47:21.236Z
 ![](/images/photo_3_2023-01-16_20-44-04.jpg)
 
 ![](/images/photo_2_2023-01-16_20-44-04.jpg)
-
-
 
 ![](/images/chrome_50wylx91mj.png)
 
